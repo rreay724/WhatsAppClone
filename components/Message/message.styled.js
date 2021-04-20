@@ -11,7 +11,7 @@ export const MessageElement = styled.p`
   min-width: 80px;
   padding-bottom: 26px;
   position: relative;
-  text-align: right;
+  text-align: left;
 `;
 
 export const Sender = styled(MessageElement)`

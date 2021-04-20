@@ -1,9 +1,9 @@
-import { Container, ChatContainer } from "../styles/chat.styled";
 import Head from "next/head";
 import { Sidebar, ChatScreen } from "../../components/index";
 import { db, auth } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import getRecipientEmail from "../../utils/getRecipientEmail";
+import styled from "styled-components";
 
 function Chat({ chat, messages }) {
   const [user] = useAuthState(auth);
@@ -57,3 +57,19 @@ export async function getServerSideProps(context) {
     },
   };
 }
+
+const Container = styled.div`
+  display: flex;
+`;
+
+const ChatContainer = styled.div`
+  flex: 1;
+  overflow: scroll;
+  height: 100vh;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+`;
